@@ -1,0 +1,14 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 500px;
+  height: 500px;
+  margin-left: 640px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  flex: 33%;
+}
