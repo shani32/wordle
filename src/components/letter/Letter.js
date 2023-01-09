@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../App";
 import "./letter.css";
 
-const Letter = () => {
-  return <div className="letter">Letter</div>;
+const Letter = ({ letterIdx, attemptValue }) => {
+  const { board, setBoard } = useContext(GlobalContext);
+  const letter = board[attemptValue][letterIdx];
+  return <div className="letter">{letter}</div>;
 };
 
 export default Letter;

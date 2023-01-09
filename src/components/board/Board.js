@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { matrix } from "../../matrix";
+
 import Letter from "../letter/Letter";
 import "./board.css";
 
 const Board = () => {
-  const [board, setBoard] = useState(matrix);
   return (
     <div className="board">
       <div className="row">
