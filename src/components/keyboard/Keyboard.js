@@ -19,9 +19,11 @@ const Keyboard = () => {
         })}
       </div>
       <div className="line-3">
+        <Key val="ENTER" namedKey />
         {line3.map((key) => {
           return <Key val={key} />;
         })}
+        <Key val="DELETE" namedKey />
       </div>
     </div>
   );
