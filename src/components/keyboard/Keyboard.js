@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useCallback, useContext, useEffect } from "react";
+import { GlobalContext } from "../../App";
 import Key from "../key/Key";
 import "./keyboard.css";
 
@@ -6,8 +7,41 @@ const Keyboard = () => {
   const line1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
   const line2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
   const line3 = ["Z", "X", "C", "V", "B", "N", "M"];
+
+  const { selectLetter, deleteLetter, enterLetter } = useContext(GlobalContext);
+
+  const handleKeyboard = useCallback((event) => {
+    if (event.key === "Enter") {
+      enterLetter();
+    } else if (event.key === "Backspace") {
+      deleteLetter();
+    } else {
+      line1.forEach((key) => {
+        if (event.key.toLowerCase() === key.toLowerCase()) {
+          selectLetter(key);
+        }
+      });
+      line2.forEach((key) => {
+        if (event.key.toLowerCase() === key.toLowerCase()) {
+          selectLetter(key);
+        }
+      });
+      line3.forEach((key) => {
+        if (event.key.toLowerCase() === key.toLowerCase()) {
+          selectLetter(key);
+        }
+      });
+    }
+  });
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyboard);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyboard);
+    };
+  }, [handleKeyboard]);
   return (
-    <div className="keyboard">
+    <div className="keyboard" onKeyDown={handleKeyboard}>
       <div className="line-1">
         {line1.map((key) => {
           return <Key val={key} />;

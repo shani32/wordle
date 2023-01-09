@@ -7,3 +7,12 @@
   font-weight: bolder;
   color: black;
 }
+#correct {
+  background-color: green;
+}
+#inAccurate {
+  background-color: orange;
+}
+#wrong {
+  background-color: red;
+}

@@ -12,6 +12,7 @@ function App() {
     letterIdx: 0,
     attemptValue: 0,
   });
+  const correctGuess = "SHOES";
   const deleteLetter = () => {
     if (currentIdxAttempt.letterIdx === 0) return;
     const newBoard = [...board];
@@ -54,6 +55,7 @@ function App() {
           enterLetter,
           selectLetter,
           deleteLetter,
+          correctGuess,
         }}
       >
         <Board />
