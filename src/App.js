@@ -19,13 +19,13 @@ function App() {
     gameOver: false,
     correctWord: false,
   });
-  // const [correctGuess, setCorrectGuess] = useState("");
-  const correctGuess = "shoes";
+  const [correctGuess, setCorrectGuess] = useState("");
+  // const correctGuess = "shoes";
 
   useEffect(() => {
     generateWord().then((words) => {
       setWordsBank(words.newWordSet);
-      // setCorrectGuess(words.randomWord);
+      setCorrectGuess(words.randomWord);
     });
   }, []);
   const deleteLetter = () => {
