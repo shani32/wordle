@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../App";
 import "./key.css";
 
-const Key = ({ val, namedKey }) => {
+const Key = ({ val, namedKey, disabled }) => {
   const {
     board,
     setBoard,
@@ -25,7 +25,7 @@ const Key = ({ val, namedKey }) => {
   return (
     <div
       className="key"
-      id={namedKey && "namedKey"}
+      id={namedKey ? "namedKey" : disabled && "disabled"}
       onClick={getLetterSelected}
     >
       {val}

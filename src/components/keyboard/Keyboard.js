@@ -8,7 +8,8 @@ const Keyboard = () => {
   const line2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
   const line3 = ["Z", "X", "C", "V", "B", "N", "M"];
 
-  const { selectLetter, deleteLetter, enterLetter } = useContext(GlobalContext);
+  const { selectLetter, deleteLetter, enterLetter, disableLetters } =
+    useContext(GlobalContext);
 
   const handleKeyboard = useCallback((event) => {
     if (event.key === "Enter") {
@@ -44,18 +45,18 @@ const Keyboard = () => {
     <div className="keyboard" onKeyDown={handleKeyboard}>
       <div className="line-1">
         {line1.map((key) => {
-          return <Key val={key} />;
+          return <Key val={key} disabled={disableLetters.includes(key)} />;
         })}
       </div>
       <div className="line-2">
         {line2.map((key) => {
-          return <Key val={key} />;
+          return <Key val={key} disabled={disableLetters.includes(key)} />;
         })}
       </div>
       <div className="line-3">
         <Key val="ENTER" namedKey />
         {line3.map((key) => {
-          return <Key val={key} />;
+          return <Key val={key} disabled={disableLetters.includes(key)} />;
         })}
         <Key val="DELETE" namedKey />
       </div>

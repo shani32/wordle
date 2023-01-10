@@ -12,3 +12,6 @@
 #namedKey {
   width: 100px;
 }
+#disabled {
+  background-color: #3a393c;
+}

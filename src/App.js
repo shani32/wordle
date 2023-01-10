@@ -13,6 +13,11 @@ function App() {
     attemptValue: 0,
   });
   const [wordsBank, setWordsBank] = useState(new Set());
+  const [disableLetters, setDisablLetters] = useState([]);
+  const [isGameOver, setIsGameOver] = useState({
+    gameOver: false,
+    correctGuess: false,
+  });
   const correctGuess = "SHOES";
 
   useEffect(() => {
@@ -44,8 +49,11 @@ function App() {
     });
     // } else {
 
-    alert("IS THIS A WORD? TRY ANOTHER GUESS");
+    // alert("IS THIS A WORD? TRY ANOTHER GUESS");
     // }
+    if (guessedWord.toLowerCase() === correctGuess) {
+      alert("Yow win! Good Job");
+    }
   };
   const selectLetter = (val) => {
     if (currentIdxAttempt.letterIdx > 4) return;
@@ -72,6 +80,10 @@ function App() {
           selectLetter,
           deleteLetter,
           correctGuess,
+          disableLetters,
+          setDisablLetters,
+          isGameOver,
+          setIsGameOver,
         }}
       >
         <Board />
