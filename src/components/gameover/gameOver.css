@@ -1,0 +1,21 @@
+.gameover {
+  margin: 20px;
+}
+.button {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: black;
+  color: white;
+}
+h3 {
+  margin: 5px;
+}

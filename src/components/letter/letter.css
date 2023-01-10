@@ -6,6 +6,8 @@
   display: grid;
   font-weight: bolder;
   color: black;
+  place-items: center;
+  font-size: 30px;
 }
 #correct {
   background-color: green;
