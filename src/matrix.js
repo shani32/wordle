@@ -5,7 +5,6 @@ export const matrix = [
   ["", "", "", "", ""],
   ["", "", "", "", ""],
   ["", "", "", "", ""],
-  ["", "", "", "", ""],
 ];
 
 export const generateWord = async () => {

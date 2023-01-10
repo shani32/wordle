@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import "./App.css";
 import Board from "./components/board/Board";
+import GameOver from "./components/gameover/GameOver";
 import Keyboard from "./components/keyboard/Keyboard";
 import { matrix, generateWord } from "./matrix";
 
@@ -51,8 +52,12 @@ function App() {
 
     // alert("IS THIS A WORD? TRY ANOTHER GUESS");
     // }
-    if (guessedWord.toLowerCase() === correctGuess) {
-      alert("Yow win! Good Job");
+    if (guessedWord === correctGuess) {
+      setIsGameOver({ gameOver: true, correctGuess: true });
+      return;
+    }
+    if (currentIdxAttempt.attemptValue === 4) {
+      setIsGameOver({ gameOver: true, correctGuess: false });
     }
   };
   const selectLetter = (val) => {
@@ -86,8 +91,10 @@ function App() {
           setIsGameOver,
         }}
       >
-        <Board />
-        <Keyboard />
+        <div>
+          <Board />
+          {isGameOver.gameOver ? <GameOver /> : <Keyboard />}
+        </div>
       </GlobalContext.Provider>
     </div>
   );
