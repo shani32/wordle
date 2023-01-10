@@ -13,8 +13,9 @@ const Letter = ({ letterIdx, attemptValue }) => {
   } = useContext(GlobalContext);
 
   const letter = board[attemptValue][letterIdx];
-  const correct = correctGuess[letterIdx] === letter;
-  const inAccurate = !correct && letter !== "" && correctGuess.includes(letter);
+  const correct = correctGuess.toUpperCase()[letterIdx] === letter;
+  const inAccurate =
+    !correct && letter !== "" && correctGuess.toUpperCase().includes(letter);
   const guessState =
     currentIdxAttempt.attemptValue > attemptValue &&
     (correct ? "correct" : inAccurate ? "inAccurate" : "wrong");

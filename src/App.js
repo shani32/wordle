@@ -17,13 +17,15 @@ function App() {
   const [disableLetters, setDisablLetters] = useState([]);
   const [isGameOver, setIsGameOver] = useState({
     gameOver: false,
-    correctGuess: false,
+    correctWord: false,
   });
-  const correctGuess = "SHOES";
+  const [correctGuess, setCorrectGuess] = useState("");
+  // const correctGuess = "SHOES";
 
   useEffect(() => {
     generateWord().then((words) => {
       setWordsBank(words.newWordSet);
+      setCorrectGuess(words.randomWord);
     });
   }, []);
   const deleteLetter = () => {
@@ -41,23 +43,29 @@ function App() {
     if (currentIdxAttempt.letterIdx !== 5) return;
     let guessedWord = "";
     for (let i = 0; i < 5; i++) {
-      guessedWord += board[currentIdxAttempt.attemptValue][i];
+      guessedWord += board[currentIdxAttempt.attemptValue][i].toLowerCase();
+      console.log(guessedWord);
+      console.log(correctGuess);
     }
     // if (wordsBank.has(guessedWord.toLowerCase())) {
-    setCurrentIdxAttempt({
-      attemptValue: currentIdxAttempt.attemptValue + 1,
-      letterIdx: 0,
-    });
+    if (true) {
+      setCurrentIdxAttempt({
+        attemptValue: currentIdxAttempt.attemptValue + 1,
+        letterIdx: 0,
+      });
+    }
+
     // } else {
 
     // alert("IS THIS A WORD? TRY ANOTHER GUESS");
     // }
     if (guessedWord === correctGuess) {
-      setIsGameOver({ gameOver: true, correctGuess: true });
+      setIsGameOver({ gameOver: true, correctWord: true });
       return;
     }
-    if (currentIdxAttempt.attemptValue === 4) {
-      setIsGameOver({ gameOver: true, correctGuess: false });
+    if (currentIdxAttempt.attemptValue > 3) {
+      setIsGameOver({ gameOver: true, correctWord: false });
+      return;
     }
   };
   const selectLetter = (val) => {

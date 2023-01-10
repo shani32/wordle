@@ -6,7 +6,7 @@ const GameOver = () => {
   return (
     <div className="gameover">
       <h2>
-        {isGameOver.correctGuess ? "You Are The Best" : "Need To Work On It"}
+        {isGameOver.correctWord ? "You Are The Best" : "Need To Work On It"}
       </h2>
       <h3>The Right Word Was: {correctGuess}</h3>
     </div>
