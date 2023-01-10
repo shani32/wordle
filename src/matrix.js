@@ -14,6 +14,7 @@ export const generateWord = async () => {
     .then((response) => response.text())
     .then((res) => {
       const newList = res.split("\n");
+
       randomWord = newList[Math.floor(Math.random() * newList.length)];
       newWordSet = new Set(newList);
     });

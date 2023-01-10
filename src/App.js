@@ -20,7 +20,7 @@ function App() {
     correctWord: false,
   });
   // const [correctGuess, setCorrectGuess] = useState("");
-  const correctGuess = "SHOES";
+  const correctGuess = "shoes";
 
   useEffect(() => {
     generateWord().then((words) => {
@@ -47,18 +47,15 @@ function App() {
       console.log(guessedWord);
       console.log(correctGuess);
     }
-    // if (wordsBank.has(guessedWord.toLowerCase())) {
-    if (true) {
+    if (wordsBank.has(guessedWord)) {
+      // if (true) {
       setCurrentIdxAttempt({
         attemptValue: currentIdxAttempt.attemptValue + 1,
         letterIdx: 0,
       });
+    } else {
+      alert("IS THIS A WORD? TRY ANOTHER GUESS");
     }
-
-    // } else {
-
-    // alert("IS THIS A WORD? TRY ANOTHER GUESS");
-    // }
     if (guessedWord.toUpperCase() === correctGuess.toUpperCase()) {
       setIsGameOver({ gameOver: true, correctWord: true });
       return;
@@ -99,7 +96,7 @@ function App() {
           setIsGameOver,
         }}
       >
-        <div>
+        <div className="container">
           <Board />
           {isGameOver.gameOver ? <GameOver /> : <Keyboard />}
         </div>
