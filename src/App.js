@@ -44,8 +44,6 @@ function App() {
     let guessedWord = "";
     for (let i = 0; i < 5; i++) {
       guessedWord += board[currentIdxAttempt.attemptValue][i].toLowerCase();
-      console.log(guessedWord);
-      console.log(correctGuess);
     }
     if (wordsBank.has(guessedWord)) {
       // if (true) {
