@@ -10,11 +10,11 @@
   font-size: 30px;
 }
 #correct {
-  background-color: green;
+  background-color: rgb(43, 201, 43);
 }
 #inAccurate {
-  background-color: orange;
+  background-color: rgb(246, 246, 106);
 }
 #wrong {
-  background-color: red;
+  background-color: rgb(221, 107, 107);
 }
