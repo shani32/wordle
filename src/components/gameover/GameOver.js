@@ -20,7 +20,9 @@ const GameOver = () => {
       <h2>
         {isGameOver.correctWord ? "You Are The Best" : "Need To Work On It"}
       </h2>
-      <h3>The Right Word Was: {correctGuess}</h3>
+      <h3>
+        The Right Word Was: <span>{correctGuess}</span>
+      </h3>
       <button className="button" onClick={newGame}>
         Play Again
       </button>
