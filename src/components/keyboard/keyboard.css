@@ -26,6 +26,7 @@
   justify-content: center;
   margin: 5px;
 }
+
 @media (max-width: 660px) {
   .keyboard {
     width: 90%;

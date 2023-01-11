@@ -21,6 +21,26 @@ h1 {
   height: calc(100vh - 170px);
   display: flex;
   align-items: center;
-  padding-top: 2.5em;
+  padding-top: 1.5em;
   flex-direction: column;
+}
+.instructions {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black;
+  line-height: 1.2;
+}
+.green {
+  background-color: rgb(43, 201, 43);
+}
+.yellow {
+  background-color: rgb(246, 246, 106);
+}
+.red {
+  background-color: rgb(221, 107, 107);
+}
+@media (max-width: 660px) {
+  .instructions {
+    font-size: 1em;
+  }
 }

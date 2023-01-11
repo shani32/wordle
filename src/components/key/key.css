@@ -15,3 +15,9 @@
 #disabled {
   background-color: #3a393c;
 }
+
+@media (max-width: 375px) {
+  .key {
+    height: 3em;
+  }
+}

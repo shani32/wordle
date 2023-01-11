@@ -77,7 +77,16 @@ function App() {
     <div className="App">
       <nav>
         <h1>Wordle</h1>
+        <div className="instructions">
+          <p>Guess the word in 5 tries. Each guess must be valid.</p>
+          <p>
+            colors:<span className="green">green-</span> correct spot,
+            <span className="yellow">yellow-</span> wrong spot,
+            <span className="red">red-</span> not in the word
+          </p>
+        </div>
       </nav>
+
       <GlobalContext.Provider
         value={{
           board,
