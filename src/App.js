@@ -52,7 +52,7 @@ function App() {
         letterIdx: 0,
       });
     } else {
-      alert("IS THIS A WORD? TRY ANOTHER GUESS");
+      alert("IS THIS A WORD? MAYBE..BUT I CAN'T FIND IT! TRY ANOTHER GUESS");
     }
     if (guessedWord.toUpperCase() === correctGuess.toUpperCase()) {
       setIsGameOver({ gameOver: true, correctWord: true });
