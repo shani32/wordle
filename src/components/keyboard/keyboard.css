@@ -1,7 +1,7 @@
 .keyboard {
-  width: 700px;
-  height: 300px;
-  margin-top: 40px;
+  width: 33%;
+  height: 15%;
+  margin-top: 2em;
 }
 
 .line-1 {
@@ -25,4 +25,14 @@
   flex-direction: row;
   justify-content: center;
   margin: 5px;
+}
+@media (max-width: 660px) {
+  .keyboard {
+    width: 90%;
+  }
+}
+@media (max-width: 820px) {
+  .keyboard {
+    width: 100%;
+  }
 }

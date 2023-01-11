@@ -1,15 +1,15 @@
 .gameover {
-  margin: 20px;
+  margin: 1.5em;
 }
 .button {
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   border: 1px solid black;
   border-radius: 5px;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 1em;
   cursor: pointer;
 }
 .button:hover {
